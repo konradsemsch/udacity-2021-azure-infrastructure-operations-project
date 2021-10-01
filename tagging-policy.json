@@ -1,0 +1,18 @@
+{
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "tagging-policy",
+    "properties": {
+        "mode": "indexed",
+        "displayName": "Deny creation of resource without tags",
+        "description": "This policy does not allow the creation of any resources without tagging them.",
+        "policyRule": {
+            "if": {
+                "field": "tags",
+                "exists": "false"
+            },
+            "then": {
+                "effect": "deny"
+            }
+        }
+    }
+}
