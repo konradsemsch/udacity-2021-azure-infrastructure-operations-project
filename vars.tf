@@ -21,7 +21,7 @@ variable "n_update_domins" {
   type        = number
 }
 
-variable "admin_user" {
+variable "admin_username" {
    description = "User name to use as the admin account on the VMs that will be part of the VM scale set"
    default     = "konradino"
 }

@@ -3,10 +3,8 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "main" {
-  name     = "${var.prefix}-resources"
-  location = var.location
-  tags     = var.tags
+data "azurerm_resource_group" "image" {
+  name = "${var.prefix}-resources"
 }
 
 resource "azurerm_virtual_network" "main" {
