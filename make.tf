@@ -7,6 +7,11 @@ data "azurerm_resource_group" "main" {
   name = "${var.prefix}-resources"
 }
 
+data "azurerm_image" "main" {
+  name                = var.packer_image_name
+  resource_group_name = data.azurerm_resource_group.main.name
+}
+
 resource "azurerm_virtual_network" "main" {
   name                = "${var.prefix}-network"
   address_space       = ["10.0.0.0/16"]
@@ -97,11 +102,6 @@ resource "azurerm_network_interface_backend_address_pool_association" "main" {
   network_interface_id    = azurerm_network_interface.main.id
   ip_configuration_name   = "${var.prefix}-ip-configuration"
   backend_address_pool_id = azurerm_lb_backend_address_pool.main.id
-}
-
-data "azurerm_image" "main" {
-  name                = var.packer_image_name
-  resource_group_name = data.azurerm_resource_group.main.name
 }
 
 resource "azurerm_availability_set" "main" {
