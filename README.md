@@ -35,9 +35,9 @@ For this project, you will write a Packer template and a Terraform template to d
 
 #### Terraform
 
-1. ``make.tf`` and ``vars.tf`` contains your Terraform infrastructure configuration
+1. ``main.tf`` and ``vars.tf`` contains your Terraform infrastructure configuration
 
-2. Possible adjustments to the ``make.tf`` file:
+2. Possible adjustments to the ``main.tf`` file:
     1. ``"azurerm_resource_group`` - ``name`` must match the resource group name you gave in Packer's ``managed_image_resource_group_name``. The main part of the name is imported from the ``vars.tf`` file from ``prefix``.
 
 3. Possible adjustments to the ``vars.tf`` file:
