@@ -15,7 +15,7 @@ variable "packer_image_name" {
   default = "project-web-server-packer-image"
 }
 
-variable "n_update_domins" {
+variable "n_update_domains" {
   description = "The number of update domains of the VM in the availability set"
   default     = 5
   type        = number
